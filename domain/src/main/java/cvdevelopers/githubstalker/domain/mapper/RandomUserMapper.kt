@@ -6,7 +6,7 @@ import cvdevelopers.githubstalker.domain.entities.RandomUserEntity
 fun mapToEntity(randomUser: RandomUser): RandomUserEntity = RandomUserEntity(
         randomUser.primaryId,
         "${randomUser.name.first} ${randomUser.name.last}",
-        randomUser.picture.thumbnail
+        randomUser.picture.large
 )
 
 fun mapToEntity(type: List<RandomUser>): List<RandomUserEntity> = type.map { mapToEntity(it) }
