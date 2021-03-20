@@ -2,7 +2,7 @@ package cvdevelopers.githubstalker.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import cvdevelopers.githubstalker.data.repository.RandomUserTableName
+import cvdevelopers.githubstalker.data.di.RandomUserTableName
 
 
 @Entity(tableName = RandomUserTableName)

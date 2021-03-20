@@ -1,4 +1,4 @@
-package cvdevelopers.githubstalker.data.repository
+package cvdevelopers.githubstalker.data.repository.converters
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken
 import cvdevelopers.githubstalker.data.model.RandomUser
 
 
-class RandomUserConverter {
+internal class RandomUserConverter {
     @TypeConverter
     fun fromRandomUserList(userList: List<RandomUser?>?): String? {
         return userList?.let {

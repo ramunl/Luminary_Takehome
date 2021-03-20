@@ -6,6 +6,9 @@ import androidx.room.TypeConverters
 import cvdevelopers.githubstalker.data.model.Picture
 import cvdevelopers.githubstalker.data.model.RandomUser
 import cvdevelopers.githubstalker.data.model.Results
+import cvdevelopers.githubstalker.data.repository.converters.NameConverter
+import cvdevelopers.githubstalker.data.repository.converters.PictureConverter
+import cvdevelopers.githubstalker.data.repository.converters.RandomUserConverter
 
 @Database(
         entities = [
@@ -21,9 +24,8 @@ import cvdevelopers.githubstalker.data.model.Results
 @TypeConverters(
         RandomUserConverter::class,
         PictureConverter::class,
-       // ResultsConverter::class,
-        NameConverter::class,
-        NativeConverter::class)
+        NameConverter::class
+)
 
 abstract class ResultsDatabase : RoomDatabase() {
     abstract val resultsDao: ResultsDao

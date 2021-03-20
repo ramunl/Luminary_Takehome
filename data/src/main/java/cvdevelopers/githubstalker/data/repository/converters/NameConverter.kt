@@ -1,4 +1,4 @@
-package cvdevelopers.githubstalker.data.repository
+package cvdevelopers.githubstalker.data.repository.converters
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
@@ -6,7 +6,7 @@ import com.google.gson.reflect.TypeToken
 import cvdevelopers.githubstalker.data.model.Name
 
 
-class NameConverter {
+internal class NameConverter {
     @TypeConverter
     fun stringToName(json: String): Name? {
         val type = object : TypeToken<Name>() {}.type
