@@ -9,7 +9,6 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.koin.core.context.loadKoinModules
-import org.koin.core.context.stopKoin
 import org.koin.test.KoinTest
 import org.koin.test.inject
 

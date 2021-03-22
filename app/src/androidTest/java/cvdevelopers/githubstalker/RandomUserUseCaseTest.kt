@@ -5,7 +5,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import cvdevelopers.githubstalker.data.repository.RandomUserRepository
 import cvdevelopers.githubstalker.domain.usecases.RandomUserUseCase
 import cvdevelopers.githubstalker.utils.AppResult
-import cvdevelopers.githubstalker.utils.isFirstRequestSent
 import cvdevelopers.githubstalker.utils.setIsFirstRequestSent
 import kotlinx.coroutines.runBlocking
 import org.junit.After

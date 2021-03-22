@@ -69,6 +69,11 @@ subprojects {
             compile.exclude group: 'org.jetbrains.kotlinx', module: 'atomicfu-common'
         }
         implementation "androidx.multidex:multidex:2.0.1"
+
+        // for room
+        implementation 'androidx.room:room-runtime:2.2.6'
+        annotationProcessor 'androidx.room:room-compiler:2.2.6'
+        kapt 'androidx.room:room-compiler:2.2.6'
     }
 }
 task clean(type: Delete) {
