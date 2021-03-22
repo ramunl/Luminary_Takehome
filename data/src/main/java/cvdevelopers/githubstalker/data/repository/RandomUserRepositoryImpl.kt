@@ -5,9 +5,9 @@ import android.util.Log
 import cvdevelopers.githubstalker.data.model.RandomUser
 import cvdevelopers.githubstalker.data.model.ResultsPage
 import cvdevelopers.githubstalker.data.network.RandomUserApi
-import cvdevelopers.githubstalker.data.util.NetworkManager.isOnline
 import cvdevelopers.githubstalker.data.util.Utils.handleApiError
 import cvdevelopers.githubstalker.data.util.Utils.handleSuccess
+import cvdevelopers.githubstalker.data.util.isOnline
 import cvdevelopers.githubstalker.data.util.localStorageError
 import cvdevelopers.githubstalker.data.util.noNetworkConnectivityError
 import cvdevelopers.githubstalker.utils.AppResult
@@ -25,7 +25,7 @@ internal class RandomUserRepositoryImpl(
     private suspend fun getRemoteResults(): AppResult<ResultsPage> {
         Log.d(TAG, "getRemoteResults")
         return try {
-            if (isOnline(context)) {
+            if (context.isOnline()) {
                 val response = api.getResults()
                 if (response.isSuccessful) {
                     //save the data

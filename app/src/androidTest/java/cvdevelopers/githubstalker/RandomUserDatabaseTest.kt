@@ -24,7 +24,7 @@ class RandomUserDatabaseTest : KoinTest {
 
 
     @Test
-    fun multiplePagesAddTest() {
+    fun multiplePagesAddedTest() {
         randomUserDatabase.clearAllTables()
         val page1Size = MockedPage1.info.results
         randomUserDatabase.resultsDao.add(MockedPage1)

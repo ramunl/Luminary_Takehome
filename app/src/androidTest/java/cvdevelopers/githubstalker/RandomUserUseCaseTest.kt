@@ -3,6 +3,7 @@ package cvdevelopers.githubstalker
 import android.content.Context
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import cvdevelopers.githubstalker.data.repository.RandomUserRepository
+import cvdevelopers.githubstalker.data.util.isOnline
 import cvdevelopers.githubstalker.domain.usecases.RandomUserUseCase
 import cvdevelopers.githubstalker.utils.AppResult
 import cvdevelopers.githubstalker.utils.setIsFirstRequestSent
@@ -28,15 +29,16 @@ class RandomUserUseCaseTest : KoinTest {
         loadKoinModules(roomTestModule)
     }
 
-
     @Test
-    fun firstLaunchTest() = runBlocking {
+    fun coldStartDeviceIsOnlineTest() = runBlocking {
+        Assert.assertTrue(context.isOnline())
         context.setIsFirstRequestSent(false)
         randomUserRepository.cleanCache()
         val res = randomUserUseCase.getRandomUsers()
         Assert.assertTrue(res is AppResult.Success)
         Assert.assertTrue((res as AppResult.Success).successData.isNotEmpty())
     }
+
     @Test
     fun readFromCacheTest() = runBlocking {
         Assert.assertTrue(randomUserUseCase.getFreshRandomUsers() is AppResult.Success)
@@ -46,7 +48,7 @@ class RandomUserUseCaseTest : KoinTest {
     }
 
     @Test
-    fun notFirstLaunchStorageEmptyTest() = runBlocking {
+    fun appStartStorageEmptyTest() = runBlocking {
         context.setIsFirstRequestSent(true)
         randomUserRepository.cleanCache()
         val res = randomUserUseCase.getRandomUsers()
