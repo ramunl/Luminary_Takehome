@@ -12,16 +12,19 @@ class RandomUserObservable(
         var fullName: String? = null,
         @Bindable
         var url: String? = null,
-        ) : BaseObservable() {
+) : BaseObservable() {
 
     companion object {
         @JvmStatic
         @BindingAdapter("android:src")
         fun imageLoader(imageView: ImageView, url: String?) {
-            Picasso.get()
-                    .load(url)
-                    .transform(CropCircleTransformation())
-                    .into(imageView)
+            if (url?.isNotEmpty() == true) {
+                Picasso.get()
+                        .load(url)
+                        .transform(CropCircleTransformation())
+                        .into(imageView)
+
+            }
         }
     }
 }

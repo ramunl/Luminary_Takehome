@@ -9,7 +9,7 @@ import cvdevelopers.githubstalker.databinding.UsersRowBinding
 import cvdevelopers.githubstalker.viewmodel.RandomUserObservable
 
 
-class UsersAdapter() : RecyclerView.Adapter<UsersAdapter.RandomUsersViewHolder>() {
+class UsersAdapter : RecyclerView.Adapter<UsersAdapter.RandomUsersViewHolder>() {
 
     var userList: List<RandomUserObservable> = ArrayList()
 

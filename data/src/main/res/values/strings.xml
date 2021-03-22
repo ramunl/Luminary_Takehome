@@ -1,3 +1,5 @@
 <resources>
     <string name="network_error">Please check your internet connection and try again.</string>
+    <string name="cache_error">Local storage is empty, pull to refresh data from server.</string>
+
 </resources>

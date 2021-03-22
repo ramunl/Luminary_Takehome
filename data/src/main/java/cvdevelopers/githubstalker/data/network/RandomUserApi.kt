@@ -1,6 +1,6 @@
 package cvdevelopers.githubstalker.data.network
 
-import cvdevelopers.githubstalker.data.model.Results
+import cvdevelopers.githubstalker.data.model.ResultsPage
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface RandomUserApi {
 
     @GET("/api/")
-    suspend fun getResults(@Query("page") page: String = "1", @Query("results") results: String = "15"): Response<Results>
+    suspend fun getResults(@Query("page") page: String = "1", @Query("results") results: String = "15"): Response<ResultsPage>
 }

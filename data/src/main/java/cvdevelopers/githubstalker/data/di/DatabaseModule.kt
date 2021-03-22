@@ -8,12 +8,12 @@ import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
 
-const val RandomUserTableName = "random_user_table"
+const val ResultsPageTableName = "results_page_table"
 
 val databaseModule = module {
 
     fun provideDatabase(application: Application): ResultsDatabase {
-        return Room.databaseBuilder(application, ResultsDatabase::class.java, RandomUserTableName)
+        return Room.databaseBuilder(application, ResultsDatabase::class.java, ResultsPageTableName)
                 .fallbackToDestructiveMigration()
                 .build()
     }
