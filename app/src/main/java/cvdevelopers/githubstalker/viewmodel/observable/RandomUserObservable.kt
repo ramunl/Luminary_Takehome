@@ -1,4 +1,4 @@
-package cvdevelopers.githubstalker.viewmodel
+package cvdevelopers.githubstalker.viewmodel.observable
 
 import android.widget.ImageView
 import androidx.databinding.BaseObservable

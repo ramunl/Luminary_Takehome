@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import cvdevelopers.githubstalker.R
 import cvdevelopers.githubstalker.databinding.UsersRowBinding
-import cvdevelopers.githubstalker.viewmodel.RandomUserObservable
+import cvdevelopers.githubstalker.viewmodel.observable.RandomUserObservable
 
 
 class UsersAdapter : RecyclerView.Adapter<UsersAdapter.RandomUsersViewHolder>() {
@@ -40,7 +40,6 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.RandomUsersViewHolder>() 
 
         fun onBind(position: Int) {
             val userEntity = userList[position]
-
             viewBinding.users = userEntity
         }
     }

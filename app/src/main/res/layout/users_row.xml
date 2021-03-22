@@ -5,7 +5,7 @@
         <import type="android.view.View" />
         <variable
             name="users"
-            type="cvdevelopers.githubstalker.viewmodel.RandomUserObservable" />
+            type="cvdevelopers.githubstalker.viewmodel.observable.RandomUserObservable" />
     </data>
 
     <LinearLayout

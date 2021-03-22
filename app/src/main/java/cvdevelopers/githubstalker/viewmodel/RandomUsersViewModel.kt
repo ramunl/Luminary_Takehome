@@ -9,29 +9,23 @@ import cvdevelopers.githubstalker.domain.usecases.RandomUserUseCase
 import cvdevelopers.githubstalker.util.SingleLiveEvent
 import cvdevelopers.githubstalker.utils.AppResult
 import cvdevelopers.githubstalker.view.UsersAdapter
+import cvdevelopers.githubstalker.viewmodel.observable.RandomUserObservable
+import cvdevelopers.githubstalker.viewmodel.observable.RecyclerConfigurationObservable
 import kotlinx.coroutines.launch
 
 class RandomUsersViewModel(private val useCase: RandomUserUseCase, application: Application) : AndroidViewModel(application) {
 
     private var userList: List<RandomUserObservable>? = null
-    private val usersAdapter = UsersAdapter()
-
     val showLoading = ObservableBoolean()
     val showError = SingleLiveEvent<String?>()
-
-
-    companion object {
-        val recyclerConfiguration: RecyclerConfiguration = RecyclerConfiguration()
-    }
-
-
-    init {
-        recyclerConfiguration.apply {
-            adapter = usersAdapter
-        }
+    private val usersAdapter = UsersAdapter().also {
+        recyclerConfigurationObservable.adapter = it
         getAllUsers()
     }
 
+    companion object {
+        val recyclerConfigurationObservable = RecyclerConfigurationObservable()
+    }
 
     fun onRefresh() {
         showLoading.set(true)
@@ -54,7 +48,7 @@ class RandomUsersViewModel(private val useCase: RandomUserUseCase, application: 
                 userList = result.successData.map {
                     RandomUserObservable(it.name, it.avatarUrl)
                 }
-                showError.value = null //we clean recycler view
+                showError.value = null
             }
             is AppResult.Error -> {
                 userList = ArrayList(0)

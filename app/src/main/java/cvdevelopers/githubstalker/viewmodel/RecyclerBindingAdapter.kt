@@ -8,6 +8,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import java.util.*
 
+//not used
 class RecyclerBindingAdapter<T>(private val holderLayout: Int, /*private val variableId: Int, */
                                 private val items: AbstractList<T>) : RecyclerView.Adapter<RecyclerBindingAdapter.BindingHolder>() {
 

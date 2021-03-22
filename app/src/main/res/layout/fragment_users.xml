@@ -39,7 +39,7 @@
                 android:id="@+id/usersList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:configuration="@{viewModel.Companion.recyclerConfiguration}"
+                app:configuration="@{viewModel.Companion.recyclerConfigurationObservable}"
                 android:paddingStart="@dimen/activity_padding_left_right"
                 android:paddingEnd="@dimen/activity_padding_left_right" />
 

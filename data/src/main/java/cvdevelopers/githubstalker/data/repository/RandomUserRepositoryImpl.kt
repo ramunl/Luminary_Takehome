@@ -48,7 +48,7 @@ internal class RandomUserRepositoryImpl(
 
     /**
      * @return either list of random users or error message
-     * @param fetchFromServerIfNeeded defines do we need to hit remote server if local data doesn't exist
+     * @param fetchFromServerIfNeeded flag defines, do we need to hit remote server if local data doesn't exist ?
      */
     override suspend fun getLocalPriorityResults(fetchFromServerIfNeeded: Boolean): AppResult<List<RandomUser>> {
         Log.d(TAG, "getLocalPriorityResults")

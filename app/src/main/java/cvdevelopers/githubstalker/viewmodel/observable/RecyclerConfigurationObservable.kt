@@ -1,4 +1,4 @@
-package cvdevelopers.githubstalker.viewmodel
+package cvdevelopers.githubstalker.viewmodel.observable
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cvdevelopers.githubstalker.BR
 
-class RecyclerConfiguration : BaseObservable() {
+class RecyclerConfigurationObservable : BaseObservable() {
 
     @get:Bindable
     var adapter: RecyclerView.Adapter<*>? = null
@@ -20,10 +20,10 @@ class RecyclerConfiguration : BaseObservable() {
     companion object {
         @JvmStatic
         @BindingAdapter("app:configuration")
-        fun configureRecyclerView(recyclerView: RecyclerView, configuration: RecyclerConfiguration) {
+        fun configureRecyclerView(recyclerView: RecyclerView, configurationObservable: RecyclerConfigurationObservable) {
             recyclerView.layoutManager = LinearLayoutManager(recyclerView.context, LinearLayoutManager.VERTICAL, false)
             recyclerView.itemAnimator = DefaultItemAnimator()
-            recyclerView.adapter = configuration.adapter
+            recyclerView.adapter = configurationObservable.adapter
         }
     }
 }

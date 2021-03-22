@@ -6,7 +6,5 @@ package cvdevelopers.githubstalker.utils
  */
 sealed class AppResult<out T> {
     data class Success<out T>(val successData: T) : AppResult<T>()
-    class Error(val exception: java.lang.Exception)
-        : AppResult<Nothing>()
-
+    class Error(val exception: java.lang.Exception) : AppResult<Nothing>()
 }
