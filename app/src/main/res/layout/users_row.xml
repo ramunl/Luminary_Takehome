@@ -15,6 +15,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:contentDescription="@string/user_photo"
             android:src="@{users.url}"
             android:id="@+id/avatarImage"
             android:layout_width="80dp"

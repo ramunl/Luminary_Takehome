@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Luminary Take Home</string>
+    <string name="user_photo">user photo</string>
 </resources>
